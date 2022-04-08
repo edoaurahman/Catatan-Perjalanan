@@ -9,9 +9,9 @@ $nik = $_SESSION['nik'];
 if (isset($_GET['sort'])) {
   $sort = $_GET['sort'];
   $q = $_GET['q'];
-  $tabel = mysqli_query($conn, "SELECT * FROM catatan WHERE nik = '$nik' AND $sort LIKE '%$q%'");
+  $tabel = mysqli_query($conn, "SELECT * FROM catatan INNER JOIN maps_location on catatan.id = maps_location.id_catatan WHERE catatan.NIK = '$nik' AND $sort LIKE '%$q%'");
 } else {
-  $tabel = mysqli_query($conn, "SELECT * FROM catatan WHERE nik = '$nik'");
+  $tabel = mysqli_query($conn, "SELECT * FROM catatan INNER JOIN maps_location on catatan.id = maps_location.id_catatan WHERE catatan.NIK = '$nik'");
 }
 
 ?>
