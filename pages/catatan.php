@@ -118,7 +118,7 @@ if (isset($_GET['sort'])) {
             </div>
 
             <div class="border mt-3 p-2 table-responsive">
-              <table class="table">
+              <table class="table table-sort table-arrows remember-sort">
                 <thead>
                   <tr>
                     <th>tanggal</th>
@@ -204,6 +204,7 @@ if (isset($_GET['sort'])) {
   <!-- AdminLTE App -->
   <script src="../assets/js/adminlte.js"></script>
   <script src="../assets/js/script.js"></script>
+  <script src="../assets/js/table-sort.js"></script>
   <!-- AdminLTE for demo purposes -->
 </body>
 
