@@ -100,23 +100,6 @@ if (isset($_GET['sort'])) {
               </form>
             </div>
 
-            <div class="border mt-3 p-2">
-              <form action="./catatan.php" method="get">
-                <label>Urutkan berdasarkan</label>
-                <select name="sort" class="form-control">
-                  <option value="tanggal">Tanggal</option>
-                  <option value="suhu">suhu</option>
-                </select>
-
-                <label>Urutkan</label>
-                <select name="sortBy" class="form-control">
-                  <option value="ASC">A-Z</option>
-                  <option value="DESC">Z-A</option>
-                </select>
-                <button type="submit" class="btn btn-primary mt-2">Urutkan</button>
-              </form>
-            </div>
-
             <div class="border mt-3 p-2 table-responsive">
               <table class="table table-sort table-arrows remember-sort">
                 <thead>
