@@ -74,6 +74,10 @@ $jumlahUser = mysqli_num_rows($query);
       <section class="content">
         <div class="container-fluid">
           <!-- Small boxes (Stat box) -->
+          <div class="border rounded shadow mb-3 p-3">
+            <h1>Anda login sebagai Admin</h1>
+            <h4><?= $data['nama']?></h4>
+          </div>
           <div class="row">
             <!-- ./col -->
             <div class="col-lg-3 col-6">

@@ -8,14 +8,14 @@ if (isset($_POST['simpan'])) {
     $jam = $_POST['jam'];
     $lokasi = $_POST['lokasi'];
     $suhu = $_POST['suhu'];
-    $lat = $_POST['lat'];
-    $long = $_POST['long'];
+    // $lat = $_POST['lat'];
+    // $long = $_POST['long'];
 
     $query = mysqli_query($conn, "INSERT INTO catatan (NIK,tanggal, jam, lokasi, suhu) VALUES ('$nik','$tanggal', '$jam', '$lokasi', '$suhu')");
 
     if ($query) {
-        $id_catatan = mysqli_fetch_assoc(mysqli_query($conn, "SELECT id FROM catatan ORDER BY id DESC LIMIT 1"))['id'];
-        mysqli_query($conn, "INSERT INTO maps_location (id_maps,latitude,longitude,id_catatan,NIK) VALUES (NULL, '$lat', '$long', '$id_catatan','$nik')");
+        // $id_catatan = mysqli_fetch_assoc(mysqli_query($conn, "SELECT id FROM catatan ORDER BY id DESC LIMIT 1"))['id'];
+        // mysqli_query($conn, "INSERT INTO maps_location (id_maps,latitude,longitude,id_catatan,NIK) VALUES (NULL, '$lat', '$long', '$id_catatan','$nik')");
         echo "<script>alert('Data Berhasil Disimpan');window.location.href = '../pages/catatan.php';</script>";
         
     } else {
@@ -46,7 +46,6 @@ if (isset($_GET['id'])) {
     $query = mysqli_query($conn, "DELETE FROM catatan WHERE id = '$id'");
 
     if ($query) {
-        mysqli_query($conn, "DELETE FROM maps_location WHERE id_catatan ='$id'");
         echo "<script>alert('Data Berhasil Hapus');window.location.href = '../pages/catatan.php';</script>";
     } else {
         echo "<script>alert('Data Gagal Hapus');window.location.href = '../pages/isicatatan.php';</script>";

@@ -9,9 +9,18 @@ $nik = $_SESSION['nik'];
 if (isset($_GET['sort'])) {
   $sort = $_GET['sort'];
   $q = $_GET['q'];
-  $tabel = mysqli_query($conn, "SELECT * FROM catatan INNER JOIN maps_location on catatan.id = maps_location.id_catatan WHERE catatan.NIK = '$nik' AND $sort LIKE '%$q%'");
+
+  $tabel = mysqli_query($conn, "SELECT * FROM catatan WHERE NIK = '$nik' AND $sort LIKE '%$q%'");
+  
+  if ($_GET['q'] === 'normal') {
+    $q = '37';
+    $tabel = mysqli_query($conn, "SELECT * FROM catatan WHERE NIK = '$nik' AND $sort < $q");
+  }else if($_GET['q'] === 'suhuTinggi'){
+    $q = '37';
+    $tabel = mysqli_query($conn, "SELECT * FROM catatan WHERE NIK = '$nik' AND $sort > $q");
+  }
 } else {
-  $tabel = mysqli_query($conn, "SELECT * FROM catatan INNER JOIN maps_location on catatan.id = maps_location.id_catatan WHERE catatan.NIK = '$nik'");
+  $tabel = mysqli_query($conn, "SELECT * FROM catatan WHERE NIK = '$nik'");
 }
 
 ?>
@@ -87,7 +96,7 @@ if (isset($_GET['sort'])) {
                     <th>Waktu</th>
                     <th>Lokasi</th>
                     <th>Suhu Tubuh</th>
-                    <th>MAPS</th>
+                    <!-- <th>MAPS</th> -->
                     <th>Aksi</th>
                   </tr>
                 </thead>
@@ -100,8 +109,8 @@ if (isset($_GET['sort'])) {
                       <td><?php echo $data['jam'] ?></td>
                       <td><?php echo $data['lokasi'] ?></td>
                       <td><?php echo $data['suhu'] ?></td>
-                      <td><iframe src="https://maps.google.com/maps?q=<?= $data['latitude']; ?>, <?= $data['longitude']; ?>&output=embed" height="270" frameborder="0" style="border:0"></iframe>
-                      </td>
+                      <!-- <td><iframe src="https://maps.google.com/maps?q=<?= $data['latitude']; ?>, <?= $data['longitude']; ?>&output=embed" height="270" frameborder="0" style="border:0"></iframe>
+                      </td> -->
                       <td>
                         <a class="btn btn-primary" href="./update.php?id=<?php echo $data['id'] ?>">Update</a>
                         <a class="btn btn-danger" href="../eksekusi/eksekusi.php?id= <?php echo $data['id'] ?>">Delete</a>

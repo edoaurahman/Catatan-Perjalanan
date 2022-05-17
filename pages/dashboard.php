@@ -22,7 +22,7 @@ $banyakTempat = mysqli_num_rows($query);
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> -->
   <!-- Tempusdominus Bootstrap 4 -->
   <link rel="stylesheet" href="../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
   <!-- iCheck -->
@@ -68,6 +68,10 @@ $banyakTempat = mysqli_num_rows($query);
       <section class="content">
         <div class="container-fluid">
           <!-- Small boxes (Stat box) -->
+          <div class="border rounded shadow mb-3 p-3">
+            <h1>Selamat datang Di Website CATATAN PERJALAN</h1>
+            <h4><?= $data['nama']?></h4>
+          </div>
           <div class="row">
             <!-- ./col -->
             <div class="col-lg-3 col-6">

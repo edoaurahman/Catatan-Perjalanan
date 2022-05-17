@@ -24,7 +24,7 @@ $banyakTempat = mysqli_num_rows($query);
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> -->
   <!-- Tempusdominus Bootstrap 4 -->
   <link rel="stylesheet" href="../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
   <!-- iCheck -->
@@ -101,9 +101,9 @@ $banyakTempat = mysqli_num_rows($query);
                   <label class="form-label">Suhu Tubuh</label>
                   <input type="text" name="suhu" class="form-control">
                 </div>
-                <input hidden id="lat" name="lat" type="text">
-                <input hidden id="long" name="long" type="text">
-                <div id="map" class="mb-3"></div>
+                <!-- <input hidden id="lat" name="lat" type="text">
+                <input hidden id="long" name="long" type="text"> -->
+                <!-- <div id="map" class="mb-3"></div> -->
                 <button type="submit" class="btn btn-primary" name="simpan">Simpan</button>
               </form>
 
@@ -131,7 +131,7 @@ $banyakTempat = mysqli_num_rows($query);
 
   <script src="../assets/js/script.js"></script>
   <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&v=weekly&channel=2" async></script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&v=weekly&channel=2" async></script> -->
   <!-- jQuery -->
   <script src="../plugins/jquery/jquery.min.js"></script>
   <!-- jQuery UI 1.11.4 -->

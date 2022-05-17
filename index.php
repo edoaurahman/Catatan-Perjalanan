@@ -1,7 +1,7 @@
-<?php 
+<?php
 session_start();
 if (isset($_SESSION['nik'])) {
-    echo "<script>alert('Silahkan Logout Terlebih dahulu');document.location='/catatanPerjalanan1/pages/dashboard.php'</script>";
+  echo "<script>alert('Silahkan Logout Terlebih dahulu');document.location='/catatanPerjalanan1/pages/dashboard.php'</script>";
 }
 ?>
 <!DOCTYPE html>
@@ -22,7 +22,7 @@ if (isset($_SESSION['nik'])) {
         <a href="../../index2.html" class="h1"><b>Catatan</b>Perjalanan</a>
       </div>
       <div class="card-body">
-        
+
 
         <form action="./inc/login_proses.php" method="post">
           <div class="input-group mb-3">
@@ -38,7 +38,7 @@ if (isset($_SESSION['nik'])) {
             <!-- /.col -->
           </div>
         </form>
-        
+
       </div>
       <!-- /.card-body -->
     </div>
@@ -52,6 +52,28 @@ if (isset($_SESSION['nik'])) {
   <script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
   <script src="./assets/js/adminlte.min.js"></script>
+  <script>
+    document.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+    });
+    document.onkeydown = function(e) {
+      if (event.keyCode == 123) {
+        return false;
+      }
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+        return false;
+      }
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+        return false;
+      }
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+        return false;
+      }
+      if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+        return false;
+      }
+    }
+  </script>
 </body>
 
 </html>

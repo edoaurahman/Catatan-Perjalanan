@@ -37,7 +37,7 @@ if (isset($_SESSION['nik'])) {
                 </div>
                 <div class="mb-3">
                     <label for="nama" class="form-label">Foto</label>
-                    <input required type="file" class="form-control" name="file" placeholder="Foto">
+                    <input required type="file" class="form-control-file border p-1 rounded" name="file" placeholder="Foto">
                 </div>
                 <button class="btn btn-success" type="submit" name="register">Register</button>
             </form>
